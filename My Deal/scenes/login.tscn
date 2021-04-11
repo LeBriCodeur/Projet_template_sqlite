@@ -1,0 +1,147 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/login.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0117647, 0.141176, 0.341176, 1 )
+border_width_top = 4
+border_width_right = 10
+border_width_bottom = 4
+border_color = Color( 0.203922, 0, 0.254902, 1 )
+border_blend = true
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+
+[node name="login" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Bg" type="Panel" parent="."]
+anchor_top = 0.323
+anchor_right = 0.494
+anchor_bottom = 0.678
+margin_top = 0.199997
+margin_right = 0.143982
+margin_bottom = 0.199982
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Bg"]
+anchor_left = 0.045
+anchor_top = 0.201
+anchor_right = 0.235
+anchor_bottom = 0.267
+margin_left = -0.0657997
+margin_top = 0.0727043
+margin_right = -56.2058
+margin_bottom = 0.0147057
+text = "Nom du profil :"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="Bg"]
+anchor_left = 0.318
+anchor_top = 0.174
+anchor_right = 0.662
+anchor_bottom = 0.286
+margin_left = 0.0919952
+margin_top = -0.0619965
+margin_right = 0.0279846
+margin_bottom = 0.0820045
+align = 1
+placeholder_text = "pseudo"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_create" type="Button" parent="Bg"]
+anchor_left = 0.708
+anchor_top = 0.174
+anchor_right = 0.899
+anchor_bottom = 0.286
+margin_left = -0.247986
+margin_top = -0.0619965
+margin_right = 0.106018
+margin_bottom = 0.0820045
+text = "Créer"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="separation" type="Label" parent="Bg"]
+anchor_left = 0.069
+anchor_top = 0.338
+anchor_right = 0.927
+anchor_bottom = 0.404
+margin_left = 0.0859985
+margin_top = 0.00600433
+margin_right = -0.0619812
+margin_bottom = -0.0519943
+text = "____________________________________________________________________________________"
+clip_text = true
+
+[node name="Label2" type="Label" parent="Bg"]
+anchor_left = 0.045
+anchor_top = 0.478
+anchor_right = 0.235
+anchor_bottom = 0.543
+margin_left = -0.0657997
+margin_top = -0.0659866
+margin_right = -0.206001
+margin_bottom = 0.0890121
+text = "Profil existant :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ListProfil" type="ItemList" parent="Bg"]
+anchor_left = 0.318
+anchor_top = 0.474
+anchor_right = 0.662
+anchor_bottom = 0.897
+margin_left = 0.0919952
+margin_top = 0.0380096
+margin_right = 0.0279846
+margin_bottom = -0.0609741
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnDelete" type="Button" parent="Bg"]
+anchor_left = 0.708
+anchor_top = 0.479
+anchor_right = 0.899
+anchor_bottom = 0.592
+margin_left = -0.247986
+margin_top = -0.0269928
+margin_right = 0.106018
+margin_bottom = -0.0959854
+text = "Supprimer"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnValide" type="Button" parent="Bg"]
+anchor_left = 0.708
+anchor_top = 0.783
+anchor_right = 0.899
+anchor_bottom = 0.896
+margin_left = -0.247986
+margin_top = -0.0299988
+margin_right = 0.106018
+margin_bottom = -0.0989838
+text = "Valider"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="Bg/btn_create" to="." method="_on_btn_create"]
+[connection signal="button_up" from="Bg/BtnDelete" to="." method="_on_BtnDelete"]
+[connection signal="button_up" from="Bg/BtnValide" to="." method="_on_BtnValide"]
